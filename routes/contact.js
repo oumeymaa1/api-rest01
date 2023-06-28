@@ -13,7 +13,7 @@ router.get("/test",(req,res) => {
 router.post ("/add",async (req,res) => {
     try{
         const {name, email, phone} = req.body;
-        const newContact = new contact({
+        const newContact = new Contact({
             name,email,phone});
         await newContact.save();
         res.status(200).send({message: "Contact added", newContact});
